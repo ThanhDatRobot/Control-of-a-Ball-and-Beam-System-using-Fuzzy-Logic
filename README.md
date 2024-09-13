@@ -102,6 +102,7 @@ This example illustrates a fuzzy control system with two input variables (temper
 ### 2. Control of a Ball and Beam System using Fuzzy Logic
 
 #### Fuzzy Logic Control Rules
+![Description of Image](./image/1.png)
 
 The table below represents the Fuzzy control rules for the system, based on `e` (error) and `edot` (error derivative). The values of `Theta` are the control outputs.
 
