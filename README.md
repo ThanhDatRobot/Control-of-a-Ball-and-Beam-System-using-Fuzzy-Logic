@@ -103,12 +103,25 @@ This example illustrates a fuzzy control system with two input variables (temper
 
 #### Fuzzy Logic Control Rules
 ![Description of Image](./image/1.png)
+
 **When the Ball is at the desired position `xd` (e = ZE), and the Ball has no tendency to move left or right (edot = ZE), the system should maintain this state without changing the Servo angle (theta = ZE).**
 
 ![Description of Image](./image/2.png)
+
+**When the Ball deviates slightly to the right of the desired position `xd` (e = NS), and the Ball has no tendency to move left or right (edot = ZE), then the Beam needs to be raised slightly to move the Ball back to `xd`, and the Servo angle should be adjusted slightly (theta = NS).**
+
 ![Description of Image](./image/3.png)
+
+**When the Ball is at the desired position `xd` (e = ZE), and the Ball has a tendency to move to the right (edot = NS), then the Beam needs to be raised slightly to keep the Ball at the desired position `xd`, and the Servo angle should be adjusted slightly (theta = NS).**
+
 ![Description of Image](./image/4.png)
+
+**When the Ball is deviating to the right of the desired position `xd` (e = NS), and the Ball has a tendency to move to the right (edot = NS), then the Beam needs to be raised to a medium level to move the Ball back to the desired position `xd`, and the Servo angle should be adjusted (theta = NM).**
+
 ![Description of Image](./image/5.png)
+
+**When the Ball is deviating to the left of the desired position `xd` (e = PS), and the Ball has a tendency to move to the right (edot = NS), then continue to maintain this state without changing the Servo angle (theta = ZE).**
+
 The table below represents the Fuzzy control rules for the system, based on `e` (error) and `edot` (error derivative). The values of `Theta` are the control outputs.
 
 | Theta \ edot | NB  | NS  | ZE  | PS  | PB  |
