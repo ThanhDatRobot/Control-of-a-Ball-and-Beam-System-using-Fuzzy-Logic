@@ -28,14 +28,26 @@ The control rules combine temperature and humidity to determine the fan speed. T
 
 ### Fuzzy Control Rule Matrix
 
+### Fuzzy Control Rule Matrix
+
 | Temperature / Humidity | Low (H)    | Medium (H) | High (H)   |
 |------------------------|------------|------------|------------|
-| **Low (T)**            | Slow (30%) | Slow (30%) | Slow (30%) |
-| **Medium (T)**         | Medium (60%)| Medium (60%)| Medium (60%)|
-| **High (T)**           | Fast (90%) | Fast (90%) | Fast (90%) |
+| **Low (T)**            | Slow (30%) | Slow (40%) | Medium (50%) |
+| **Medium (T)**         | Slow (40%) | Medium (60%)| Fast (70%)  |
+| **High (T)**           | Medium (50%)| Fast (70%) | Fast (90%)  |
 
 
-#### Step 3: Define Membership Functions
+#### Step 3: Define Control Rules
+
+The control rules combine temperature and humidity to determine the fan speed. Here's the updated fuzzy control rule matrix:
+
+| Temperature / Humidity | Low (H)    | Medium (H) | High (H)   |
+|------------------------|------------|------------|------------|
+| **Low (T)**            | Slow (30%) | Slow (40%) | Medium (50%) |
+| **Medium (T)**         | Slow (40%) | Medium (60%)| Fast (70%)  |
+| **High (T)**           | Medium (50%)| Fast (70%) | Fast (90%)  |
+
+#### Step 4: Define Membership Functions
 
 Membership functions for temperature and humidity are defined as follows:
 
@@ -49,7 +61,7 @@ Membership functions for temperature and humidity are defined as follows:
   - **Medium:** `μ_medium(H) = max(0, min((H - 30)/10, (70 - H)/20))`
   - **High:** `μ_high(H) = max(0, min((H - 50)/20, 1))`
 
-#### Step 4: Calculate Membership Values for a Given Input
+#### Step 5: Calculate Membership Values for a Given Input
 
 Assume the actual temperature is **28°C** and the humidity is **60%**. The membership values are calculated as follows:
 
@@ -63,35 +75,40 @@ Assume the actual temperature is **28°C** and the humidity is **60%**. The memb
   - `μ_medium(60) = 0.5`
   - `μ_high(60) = 0.5`
 
-#### Step 5: Inference Using Max-Prod Method
+#### Step 6: Inference Using Max-Prod Method
 
-Here are the rules that are triggered and their corresponding firing strengths:
+Based on the updated fuzzy control rule matrix, here are the relevant rules triggered and their corresponding firing strengths:
 
-1. **Rule 5: IF Temperature is Medium AND Humidity is Medium THEN Fan Speed = 60**
+1. **Rule 5: IF Temperature is Medium AND Humidity is Medium THEN Fan Speed = 60%**
    - Firing strength = `μ_medium(28) * μ_medium(60) = 0.4 * 0.5 = 0.2`
-   - Output value = `60`
+   - Output value = `60%`
    - Activated output = `0.2 * 60 = 12`
 
-2. **Rule 6: IF Temperature is High AND Humidity is Medium THEN Fan Speed = 90**
+2. **Rule 6: IF Temperature is Medium AND Humidity is High THEN Fan Speed = 70%**
+   - Firing strength = `μ_medium(28) * μ_high(60) = 0.4 * 0.5 = 0.2`
+   - Output value = `70%`
+   - Activated output = `0.2 * 70 = 14`
+
+3. **Rule 7: IF Temperature is High AND Humidity is Medium THEN Fan Speed = 70%**
    - Firing strength = `μ_high(28) * μ_medium(60) = 0.6 * 0.5 = 0.3`
-   - Output value = `90`
-   - Activated output = `0.3 * 90 = 27`
+   - Output value = `70%`
+   - Activated output = `0.3 * 70 = 21`
 
-3. **Rule 9: IF Temperature is High AND Humidity is High THEN Fan Speed = 90**
+4. **Rule 8: IF Temperature is High AND Humidity is High THEN Fan Speed = 90%**
    - Firing strength = `μ_high(28) * μ_high(60) = 0.6 * 0.5 = 0.3`
-   - Output value = `90`
+   - Output value = `90%`
    - Activated output = `0.3 * 90 = 27`
 
-#### Step 6: Defuzzification (Weighted Average)
+#### Step 7: Defuzzification (Weighted Average)
 
 Using the weighted average method, the final fan speed is calculated as follows:
 
-**Fan Speed = (12 + 27 + 27) / (0.2 + 0.3 + 0.3) = 66 / 0.8 = 82.5**
+**Fan Speed = (12 + 14 + 21 + 27) / (0.2 + 0.2 + 0.3 + 0.3) = 74 / 1.0 = 74**
 
 
 #### Result
 
-The final fan speed after inference is **82.5%**.
+The final fan speed after inference is **74%**.
 
 ---
 
