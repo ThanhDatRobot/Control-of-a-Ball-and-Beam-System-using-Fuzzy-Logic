@@ -102,6 +102,9 @@ This example illustrates a fuzzy control system with two input variables (temper
 ### 2. Control of a Ball and Beam System using Fuzzy Logic
 
 #### Fuzzy Logic Control Rules
+
+**Some experiences from the expert**
+
 ![Description of Image](./image/1.png)
 
 **When the Ball is at the desired position `xd` (e = ZE), and the Ball has no tendency to move left or right (edot = ZE), the system should maintain this state without changing the Servo angle (theta = ZE).**
