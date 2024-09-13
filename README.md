@@ -89,9 +89,8 @@ Here are the rules that are triggered and their corresponding firing strengths:
 
 Using the weighted average method, the final fan speed is calculated as follows:
 
-\[
-\text{Fan Speed} = \frac{(12 + 27 + 27)}{(0.2 + 0.3 + 0.3)} = \frac{66}{0.8} = 82.5
-\]
+**Fan Speed = (12 + 27 + 27) / (0.2 + 0.3 + 0.3) = 66 / 0.8 = 82.5**
+
 
 #### Result
 
