@@ -1,6 +1,6 @@
 # Control-of-a-Ball-and-Beam-System-using-Fuzzy-Logic
 
-### Example: Fan Speed Control Based on Temperature and Humidity
+### 1. Example: Fan Speed Control Based on Temperature and Humidity
 
 #### Step 1: Define Input and Output Variables
 
@@ -98,3 +98,22 @@ The final fan speed after inference is **74%**.
 ---
 
 This example illustrates a fuzzy control system with two input variables (temperature and humidity) using the **Max-Prod** method for inference and a **Sugeno-type fuzzy controller** with constant outputs. The final output is obtained using the **weighted average method** for defuzzification.
+
+### 2. Control of a Ball and Beam System using Fuzzy Logic
+
+# Fuzzy Logic Control Rules
+
+The table below represents the Fuzzy control rules for the system, based on `e` (error) and `edot` (error derivative). The values of `Theta` are the control outputs.
+
+| Theta \ edot | NB  | NS  | ZE  | PS  | PB  |
+|--------------|-----|-----|-----|-----|-----|
+| **NB**       | NB  | NB  | NM  | NS  | ZE  |
+| **NS**       | NB  | NM  | NS  | ZE  | PS  |
+| **ZE**       | NM  | NS  | ZE  | PS  | PM  |
+| **PS**       | NS  | ZE  | PS  | PM  | PB  |
+| **PB**       | ZE  | PS  | PM  | PB  | PB  |
+
+- **e** stands for error (deviation from the desired value)
+- **edot** represents the rate of change of the error
+- **Theta** is the resulting output based on the Fuzzy logic rules
+
