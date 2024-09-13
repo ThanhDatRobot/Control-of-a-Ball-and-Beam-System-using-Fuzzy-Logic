@@ -95,9 +95,9 @@ Using the weighted average method, the final fan speed is calculated as follows:
 
 The final fan speed after inference is **74%**.
 
----
-
 This example illustrates a fuzzy control system with two input variables (temperature and humidity) using the **Max-Prod** method for inference and a **Sugeno-type fuzzy controller** with constant outputs. The final output is obtained using the **weighted average method** for defuzzification.
+
+---
 
 ### 2. Control of a Ball and Beam System using Fuzzy Logic
 
