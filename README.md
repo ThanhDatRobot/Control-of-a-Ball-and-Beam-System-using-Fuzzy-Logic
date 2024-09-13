@@ -26,17 +26,14 @@
 
 The control rules combine temperature and humidity to determine the fan speed. The rules are as follows:
 
-| **Temperature** | **Humidity** | **Fan Speed** |
-|-----------------|--------------|---------------|
-| Low             | Low          | Slow (30%)    |
-| Medium          | Low          | Medium (60%)  |
-| High            | Low          | Fast (90%)    |
-| Low             | Medium       | Slow (30%)    |
-| Medium          | Medium       | Medium (60%)  |
-| High            | Medium       | Fast (90%)    |
-| Low             | High         | Slow (30%)    |
-| Medium          | High         | Medium (60%)  |
-| High            | High         | Fast (90%)    |
+### Fuzzy Control Rule Matrix
+
+| Temperature / Humidity | Low (H)    | Medium (H) | High (H)   |
+|------------------------|------------|------------|------------|
+| **Low (T)**            | Slow (30%) | Slow (30%) | Slow (30%) |
+| **Medium (T)**         | Medium (60%)| Medium (60%)| Medium (60%)|
+| **High (T)**           | Fast (90%) | Fast (90%) | Fast (90%) |
+
 
 #### Step 3: Define Membership Functions
 
