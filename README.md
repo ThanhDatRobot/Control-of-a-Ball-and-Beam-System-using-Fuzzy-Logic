@@ -139,3 +139,14 @@ The table below represents the Fuzzy control rules for the system, based on `e` 
 - **edot** represents the rate of change of the error
 - **Theta** is the resulting output based on the Fuzzy logic rules
 
+**Actual model control results**
+
+| n/Setpoint   | 10 | 20 | 30 |
+|----------|-------------|-------------|-------------|
+| 1 | 10.570      | 19.55       | 31.78       |
+| 2 | 9.552       | 20.84       | 31.47       |
+| 3 | 10.910      | 20.20       | 32.50       |
+| 4 | 9.553       | 21.13       | 30.96       |
+| 5 | 8.817       | 22.12       | 30.16       |
+| 6 | 8.917       | 20.17       | 30.28       |
+| 7 | 10.22       | 20.84       | 31.72       |
