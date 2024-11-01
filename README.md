@@ -127,13 +127,16 @@ This example illustrates a fuzzy control system with two input variables (temper
 
 The table below represents the Fuzzy control rules for the system, based on `e` (error) and `edot` (error derivative). The values of `Theta` are the control outputs.
 
-| Theta \ edot | NB  | NS  | ZE  | PS  | PB  |
-|--------------|-----|-----|-----|-----|-----|
-| **NB**       | NB  | NB  | NM  | NS  | ZE  |
-| **NS**       | NB  | NM  | NS  | ZE  | PS  |
-| **ZE**       | NM  | NS  | ZE  | PS  | PM  |
-| **PS**       | NS  | ZE  | PS  | PM  | PB  |
-| **PB**       | ZE  | PS  | PM  | PB  | PB  |
+| edot \ e | NB  | NM  | NS  | ZE  | PS  | PM  | PB  |
+|----------|-----|-----|-----|-----|-----|-----|-----|
+| **NB**   | NB  | NB  | NM  | NM  | NS  | NS  | ZE  |
+| **NM**   | NB  | NM  | NM  | NS  | NS  | ZE  | PS  |
+| **NS**   | NM  | NM  | NS  | ZE  | PS  | PS  | PS  |
+| **ZE**   | NM  | NS  | ZE  | ZE  | PS  | PM  | PM  |
+| **PS**   | NS  | NS  | ZE  | PS  | PS  | PM  | PM  |
+| **PM**   | NS  | ZE  | PS  | PM  | PM  | PB  | PB  |
+| **PB**   | ZE  | PS  | PS  | PM  | PM  | PB  | PB  |
+
 
 - **e** stands for error (deviation from the desired value)
 - **edot** represents the rate of change of the error
