@@ -144,7 +144,7 @@ The table below represents the Fuzzy control rules for the system, based on `e` 
 
 **Actual model control results**
 
-| n/Setpoint   | 10 | 20 | 30 |
+| n\Setpoint   | 10 | 20 | 30 |
 |----------|-------------|-------------|-------------|
 | 1 | 10.570      | 19.55       | 31.78       |
 | 2 | 9.552       | 20.84       | 31.47       |
