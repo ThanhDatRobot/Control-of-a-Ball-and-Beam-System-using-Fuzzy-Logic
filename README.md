@@ -131,7 +131,7 @@ The table below represents the Fuzzy control rules for the system, based on `e` 
 |----------|-----|-----|-----|-----|-----|-----|-----|
 | **NB**   | NB  | NB  | NM  | NM  | NS  | NS  | ZE  |
 | **NM**   | NB  | NM  | NM  | NS  | NS  | ZE  | PS  |
-| **NS**   | NM  | NM  | NS  | ZE  | ZE  | PS  | PS  |
+| **NS**   | NM  | NM  | NS  | NS  | ZE  | PS  | PS  |
 | **ZE**   | NM  | NS  | NS  | ZE  | PS  | PM  | PM  |
 | **PS**   | NS  | NS  | ZE  | PS  | PS  | PM  | PM  |
 | **PM**   | NS  | ZE  | PS  | PM  | PM  | PB  | PB  |
